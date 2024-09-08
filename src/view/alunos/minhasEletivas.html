@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Inscrições</title>
+    <link rel="stylesheet" href="../../styles/homestyles.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome do Aluno</h1>
+        <p>Matrícula: 123456</p>
+        <p>Turma: 10A</p>
+    </header>
+
+    <div class="container">
+        <button onclick="window.location.href='homeAluno.html'">Voltar</button>
+
+        <div class="eletivas-inscritas">
+            <h2>Eletivas Inscritas</h2>
+            <ul id="lista-inscricoes">
+                <!-- Lista das inscrições será gerada aqui -->
+            </ul>
+        </div>
+    </div>
+    <button id="editar" onclick="editarModal()">Editar</button>
+    <button id="apagar">Apagar</button>
+    <dialog id="dialog">
+        <h1>Título</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam earum dolor provident distinctio molestias? Architecto in commodi quia quaerat ad ea optio totam, distinctio voluptatibus officiis nulla beatae. Distinctio, aperiam!</p>
+        <button onclick="fecharModal()">ok</button>
+    </dialog>
+    <dialog id="dialogExcluir">
+        
+    </dialog>
+    
+    <script>
+        // Simulação das inscrições. Substitua por chamadas reais ao backend.
+        const inscricoes = ['Eletiva 1', 'Eletiva 4', 'Eletiva 3'];
+
+        const listaInscricoes = document.getElementById('lista-inscricoes');
+
+        inscricoes.forEach(function(eletiva) {
+            const li = document.createElement('li');
+            li.textContent = eletiva;
+            listaInscricoes.appendChild(li);
+        });
+
+
+        let modal = document.getElementById("dialog")
+
+        function editarModal(){
+            modal.showModal()
+        }
+        function fecharModal(){
+            modal.close()
+        }
+    </script>
+</body>
+</html>

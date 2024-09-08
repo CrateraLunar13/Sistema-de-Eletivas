@@ -1,0 +1,34 @@
+ADMINISTRADORES --> 
+    ADICIONAR, EDITA E EXCLUIR NOVO ADMINISTRADOR:
+        - Id, Nome, Login, Criado, Atualizado, Status, Ações
+        - Nome, Login, Senha, Status(ativo, desativo)
+    INSERIR NOVA ELETIVA:
+        - Dia Da Semana, Título, Semestre, Professor, Vagas, Status(Aberto, Fechado)
+    VISUALIZAR, EDITAR, APAGAR, FECHAR INSCRIÇÕES DE ELEIVAS:
+        - Criado, Titulo, Professor, Vagas, Status, Dia da Semana, Semestre, Atualizado, Ações
+    INSERIR NOVO ALUNO:
+        - 
+    VISUALIZAR, EDITAR E APAGAR ALUNOS:
+        - Id, Nome, Matrícula, Turma, Criado, Atualizado, Status(Ativo, Desativo) Ações 
+    INSERIR NOVO PROFESSOR:
+        - 
+    VISUALIZAR, EDITAR E APAGAR PROFESSOR:
+        - Id, Nome, CPF, Criado, Atualizado, Status, Ações
+    INSERIR NOVA TURMA:
+        - 
+    VISUALIZAR, EDITAR E APAGAR TURMAS:
+        - Id, Nome, Criado, Atualizado, Status, Ações
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-= FALTA A PARTE DAS INCRIÇÕES -=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+ALUNOS -->
+    ESCOLHER DIA DA ELETIVA:
+        - segunda, teça, quarta, quinta ou sexta
+    INSCREVER-SE NA ELETIVA ESCOLHIDA
+    VISUALIZAR "MINHAS INCRIÇÕES":
+        - Id, Eletiva, Dia da semana, Professor, Semestre, Ações (Inscrever-se // Inscrito)
+
+PROFESSORES -->
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- OBS --> LEMBRAR DE COLOCAR O BOTÃO DE |SAIR| EM TODAS AS TELAS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

@@ -1,0 +1,140 @@
+:root {
+    --bg-laranja: #e67e22;
+    --bg-main:#f9f9f9;
+    --width-drawer: 25%;
+    --pad-sec-w: 20px;
+    --pad-sec-h: 80px;
+    --bg-laranja-link: rgb(255, 174, 23);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    order: solid 1px black;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--bg-laranja);
+    display: flex;
+    height: 120px;
+}
+.logocfo{
+    display: flex;
+    flex-direction: row;
+    
+    height: 100px;
+    color: white;
+    margin-inline: 20px;
+    margin-block: auto;
+    padding-block: auto;
+    border-radius:5px;
+    
+    justify-content: space-around;
+}
+.nomecfo{
+    font-weight: 800;
+}
+
+footer{
+    background: #a0a0a0;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    background: var(--bg-main);
+}
+.logocfoimg{
+    height: 80px;
+}
+
+aside {
+    background: var(--bg-laranja);
+    width: var(--width-drawer);
+
+}
+
+section {
+    padding: var(--pad-sec-h) var(--pad-sec-w);
+    flex: 1;
+    position: relative;
+}
+aside nav{
+    display: flex;
+    flex-direction: column;
+    margin-inline: 20px;
+    justify-content: space-around;
+
+}
+aside nav a{
+    text-decoration: none;
+    padding-block: 20px;
+    background-color: var(--bg-laranja-link);
+    color: white;
+    font-weight: 600;
+    margin-block: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+        
+}
+.tabela thead th{
+    padding-bottom: 20px;
+    
+}
+.tituloSection{
+    position: absolute;   
+    top: 0;
+    margin: 20px;
+}
+
+.btnEditar,
+.btnExcluir {
+    padding: 8px 20px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    
+}
+.btnEditar{
+    background-color: #27ae60;
+}
+.btnExcluir{
+    background-color: #ae2727;
+}
+
+.tabela tr td {
+    text-align: center;
+    font-weight: 500;
+}
+.acoes{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição em Eletivas</title>
+    <link rel="stylesheet" href="../../styles/homestyles.css">
+    
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome do Aluno</h1>
+        <p>Matrícula: 123456</p>
+        <p>Turma: 10A</p>
+
+    </header>
+
+    <div class="container">
+        <button onclick="abrirModal()">Escolher Dia da Semana</button>
+        <button onclick="window.location.href='minhasEletivas.html'">Minhas Inscrições</button>
+
+        <!-- Modal para Seleção do Dia da Semana -->
+        <div id="modal-selecao" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <h3>Escolha o Dia da Semana</h3>
+                <button onclick="selecionarDia('segunda')">Segunda-feira</button>
+                <button onclick="selecionarDia('terca')">Terça-feira</button>
+                <button onclick="selecionarDia('quarta')">Quarta-feira</button>
+                <button onclick="selecionarDia('quinta')">Quinta-feira</button>
+                <button onclick="selecionarDia('sexta')">Sexta-feira</button>
+            </div>
+        </div>
+    
+        <div id="segunda" class="eletivas" >
+            <h2>Eletivas de Segunda-feira</h2>
+            <table style ='border-collapse: collapse'>
+                    <tr>
+                      <th scope="col">#ID</th>
+                      <th scope="col">Nome da eletiva</th>
+                      <th scope="col">Professor</th>
+                      <th scope="col">Semestre</th>
+                      <th></th>
+                    </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td> <td>Antoniel Oliveira</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Matemática para olimpíadas', this) ">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td> <td> Hyandra Ramos</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Informática básica', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td><td>Paulo Jeferson</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Fundamentos do futsal', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td> <td>Professor A</td> <td>2024.1</td>
+                    <td></td><button onclick="inscreverEletiva('Eletiva 1', this)">Inscrever-se</button> </td>
+                </tr>
+                
+                
+            </table>
+        </div>
+
+        <div id="terca" class="eletivas" style="display:none;">
+            <h2>Eletivas de Terça-feira</h2>
+            <ul>
+                <li>
+                    <span>004</span>
+                    <span>Eletiva 4 - Professor D - 2024.1</span>
+                    <button onclick="inscreverEletiva('Eletiva 4', this)">Inscrever-se</button>
+                </li>
+                <li>
+                    <span>005</span>
+                    <span>Eletiva 5 - Professor E - 2024.1</span>
+                    <button onclick="inscreverEletiva('Eletiva 5', this)">Inscrever-se</button>
+                </li>
+                <li>
+                    <span>006</span>
+                    <span>Eletiva 6 - Professor F - 2024.1</span>
+                    <button onclick="inscreverEletiva('Eletiva 6', this)">Inscrever-se</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal-confirmacao" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h3 id="modal-texto"></h3>
+            <p>Você foi inscrito com sucesso!</p>
+        </div>
+    </div>
+    
+    <script>
+        function abrirModal() {
+            document.getElementById('modal-selecao').style.display = 'block';
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-selecao').style.display = 'none';
+            document.getElementById('modal-confirmacao').style.display = 'none';
+        }
+
+        function selecionarDia(dia) {
+            fecharModal();
+            document.querySelectorAll('.eletivas').forEach(function(div) {
+                div.style.display = 'none';
+            });
+            document.getElementById(dia).style.display = 'block';
+        }
+
+        function inscreverEletiva(nomeEletiva, button) {
+            
+            // Desabilitar todos os botões de inscrição
+            document.querySelectorAll('.eletivas tr th button').forEach(function(btn) {
+                btn.disabled = true;
+                btn.style.backgroundColor = '#95a5a6'; // Cor de desativado
+                btn.style.cursor = 'not-allowed';
+            });
+            button.textContent = ("Inscrito");
+    
+
+            // Mostrar o modal de confirmação
+            document.getElementById('modal-texto').innerText = nomeEletiva;
+            document.getElementById('modal-confirmacao').style.display = 'block';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal-selecao') || event.target == document.getElementById('modal-confirmacao')) {
+                fecharModal();
+            }
+        }
+    </script>
+</body>
+</html>

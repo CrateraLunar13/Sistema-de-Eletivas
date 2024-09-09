@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição em Eletivas</title>
     <link rel="stylesheet" href="../../styles/homestyles.css">
-    
+    <link rel="stylesheet" href="../../output.css">
     
     </style>
 </head>
 <body>
-    <header>
-        <h1>Nome do Aluno</h1>
+    <header class="bg-orange-500 flex content-end">
+        <h1 class="text-3xl mb-10 font-bold">Nome do aluno</h1>
         <p>Matrícula: 123456</p>
         <p>Turma: 10A</p>
 
@@ -25,7 +25,7 @@
         <div id="modal-selecao" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="fecharModal()">&times;</span>
-                <h3>Escolha o Dia da Semana</h3>
+                <h3 class="bg-green-400">Escolha o Dia da Semana</h3>
                 <button onclick="selecionarDia('segunda')">Segunda-feira</button>
                 <button onclick="selecionarDia('terca')">Terça-feira</button>
                 <button onclick="selecionarDia('quarta')">Quarta-feira</button>
@@ -34,8 +34,8 @@
             </div>
         </div>
     
-        <div id="segunda" class="eletivas" >
-            <h2>Eletivas de Segunda-feira</h2>
+        <div id="segunda" class="eletivas " >
+            <h2 class=" text-orange-400">Eletivas de Segunda-feira</h2>
             <table style ='border-collapse: collapse'>
                     <tr>
                       <th scope="col">#ID</th>

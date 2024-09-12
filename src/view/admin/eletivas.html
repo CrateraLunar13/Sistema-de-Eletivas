@@ -1,37 +1,709 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <style>
-        *{
-            border: solid 1px black;
+        :root {
+            --bg-orange-500: #f97316;
+            --bg-secundario-orange: #bd5a14;
+        }
+
+        * {
+            order: solid 1px black;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             text-align: center;
+
         }
-        body,html{
+
+        body,
+        html {
             display: flex;
             flex-direction: column;
             height: 100%;
+            width: 100%;
         }
-        main{
-            flex:1;
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            overflow-y: hidden;
+
+
         }
-        
-        header,footer{
+
+        aside {
+            flex: 1;
+            padding: 10px 5px;
+            background-color: var(--bg-orange-500);
+        }
+
+        section {
+            margin: 20px;
+            flex: 5;
+            padding: 0 10px;
+            overflow-y: scroll;
+
+
+        }
+
+        header {
             height: 120px;
+            background-color: var(--bg-orange-500);
+        }
+
+        footer {
+            height: 10%;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+
+
+        }
+
+        thead {
+            background-color: #f4f4f4;
+            /* Cor de fundo do cabeçalho */
+            position: -webkit-sticky;
+            /* Suporte para navegadores baseados em WebKit */
+            position: sticky;
+            top: 0;
+            /* Fixa o cabeçalho no topo do contêiner */
+            z-index: 1;
+            /* Garante que o cabeçalho fique sobre o corpo da tabela */
+            border: none;
+        }
+
+        .logocfo {
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: auto 20px;
+
+        }
+
+        .logocfoimg {
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
+
+
+<!--
+INSERIR NOVA ELETIVA:
+    - Dia Da Semana, Título, Semestre, Professor, Vagas, Status(Aberto, Fechado)
+VISUALIZAR, EDITAR, APAGAR, FECHAR INSCRIÇÕES DE ELEIVAS:
+    - Criado, Titulo, Professor, Vagas, Status, Dia da Semana, Semestre, Atualizado, Ações
+-->
+
+
 <body>
-    <header class="sw">HEADER</header>
-    <main class="sw">MAIN</main>
-    <footer class="sw">FOOTER</footer>
+    <header class="sw">
+        <div class="logocfo ">
+            <img src="../../assets/logosemfundo.png" alt="Logo EEMTI Capelão Frei Orlando" class="logocfoimg">
+            <div class="nomecfo">Escola de Ensino <br>Médio em Tempo Integral<br> Capelão Frei Orlando</div>
+            <img src="../materialUi/menu.svg" alt="" srcset="">
+
+        </div>
+        <div class="titulo"></div>
+    </header>
+    <main class="bg-slate-300">
+        <aside>
+            
+        </aside>
+        <section>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="cabecalhotabela">
+                        <th scope="col">Criado</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Professor</th>
+                        <th scope="col">Vagas</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Dia da semana</th>
+                        <th scope="col">Semestre</th>
+                        <th scope="col">Atualizado</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td><p id="status">Ativo</p></td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)" class="button btn-">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td><p class="status">Ativo</p></td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td><p class="status">Ativo</p></td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td><p class="status">Ativo</p></td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td><p class="status">Ativo</p></td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td>
+                    <td>Antoniel Oliveira</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td>
+                    <td> Hyandra Ramos</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td>
+                    <td>Paulo Jeferson</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td>
+                    <td>Professor A</td>
+                    <td>8</td>
+                    <td>Ativo</td>
+                    <td>Quarta-feira</td>
+                    <td>2024.1</td>
+                    <td></td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Visualizar</button>
+                        <button onclick="editarEletiva('Eletiva 1', this)">Editar</button>
+                        <button onclick="apagarEletiva('Eletiva 1', this)">Apagar</button>
+                        <button onclick="excluirEletiva('Eletiva 1', this)">Excluir</button>
+                    </td>
+                </tr>
+
+
+            </table>
+        </section>
+    </main>
+
+
     <script>
-        console.log(document.getElementsByClassName('sw'))
+        document.getElementsByClassName('status').forEach(nstatus => {
+            nstatus.style.color= 'rgb(255.200,0);'
+            
+        });
+        if (document.getElementsByTagName('status').item.apply == "Ativo") {
+            document.getElementById('status').style.color = 'rgb(12,255,12)';
+        }
+        else if (document.getElementById('status').innerHTML == "Desativo") {
+            document.getElementById('status').style.color = 'rbg(255,12,12)';
+        }
     </script>
 </body>
+
 </html>

@@ -6,20 +6,25 @@
     <title>Inscrição em Eletivas</title>
     <link rel="stylesheet" href="../../styles/homestyles.css">
     <link rel="stylesheet" href="../../output.css">
+    <link rel="stylesheet" href="../../styles/home.css">
     
     </style>
 </head>
 <body>
-    <header class="bg-orange-500 flex content-end">
-        <h1 class="text-3xl mb-10 font-bold">Nome do aluno</h1>
-        <p>Matrícula: 123456</p>
-        <p>Turma: 10A</p>
-
+    <header class="bg-orange-500">
+    
+        <div class="logocfo ">
+          <img src="../../assets/logosemfundo.png" alt="Logo EEMTI Capelão Frei Orlando" class="logocfoimg">
+          <div class="nomecfo">Escola de Ensino <br>Médio em Tempo Integral<br> Capelão Frei Orlando</div>
+            <img src="../materialUi/menu.svg" alt="" srcset="">
+          
+      </div>
+      <div class="titulo"></div>
     </header>
 
     <div class="container">
-        <button onclick="abrirModal()">Escolher Dia da Semana</button>
-        <button onclick="window.location.href='minhasEletivas.html'">Minhas Inscrições</button>
+        <button onclick="abrirModal()" class="botoes">Escolher Dia da Semana</button>
+        <button onclick="window.location.href='minhasEletivas.html'" class="botoes">Minhas Inscrições</button>
 
         <!-- Modal para Seleção do Dia da Semana -->
         <div id="modal-selecao" class="modal">
@@ -42,7 +47,7 @@
                       <th scope="col">Nome da eletiva</th>
                       <th scope="col">Professor</th>
                       <th scope="col">Semestre</th>
-                      <th></th>
+                      <th> </th>
                     </tr>
                 <tr>
                     <td>001</td>
@@ -62,32 +67,116 @@
                 <tr>
                     <td>004</td>
                     <td>Eletiva 1</td> <td>Professor A</td> <td>2024.1</td>
-                    <td></td><button onclick="inscreverEletiva('Eletiva 1', this)">Inscrever-se</button> </td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Inscrever-se</button> </td>
                 </tr>
                 
                 
             </table>
         </div>
 
-        <div id="terca" class="eletivas" style="display:none;">
-            <h2>Eletivas de Terça-feira</h2>
-            <ul>
-                <li>
-                    <span>004</span>
-                    <span>Eletiva 4 - Professor D - 2024.1</span>
-                    <button onclick="inscreverEletiva('Eletiva 4', this)">Inscrever-se</button>
-                </li>
-                <li>
-                    <span>005</span>
-                    <span>Eletiva 5 - Professor E - 2024.1</span>
-                    <button onclick="inscreverEletiva('Eletiva 5', this)">Inscrever-se</button>
-                </li>
-                <li>
-                    <span>006</span>
-                    <span>Eletiva 6 - Professor F - 2024.1</span>
-                    <button onclick="inscreverEletiva('Eletiva 6', this)">Inscrever-se</button>
-                </li>
-            </ul>
+        <div id="terca" class="eletivas " >
+            <h2 class=" text-orange-400">Eletivas de Terça-feira</h2>
+            <table style ='border-collapse: collapse'>
+                    <tr>
+                      <th scope="col">#ID</th>
+                      <th scope="col">Nome da eletiva</th>
+                      <th scope="col">Professor</th>
+                      <th scope="col">Semestre</th>
+                      <th> </th>
+                    </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td> <td>Antoniel Oliveira</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Matemática para olimpíadas', this) ">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td> <td> Hyandra Ramos</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Informática básica', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td><td>Paulo Jeferson</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Fundamentos do futsal', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td> <td>Professor A</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Inscrever-se</button> </td>
+                </tr>
+                
+                
+            </table>
+        </div>
+
+        <div id="quarta" class="eletivas " >
+            <h2 class=" text-orange-400">Eletivas de Quarta-feira</h2>
+            <table style ='border-collapse: collapse'>
+                    <tr>
+                      <th scope="col">#ID</th>
+                      <th scope="col">Nome da eletiva</th>
+                      <th scope="col">Professor</th>
+                      <th scope="col">Semestre</th>
+                      <th> </th>
+                    </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td> <td>Antoniel Oliveira</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Matemática para olimpíadas', this) ">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td> <td> Hyandra Ramos</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Informática básica', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td><td>Paulo Jeferson</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Fundamentos do futsal', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td> <td>Professor A</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Inscrever-se</button> </td>
+                </tr>
+                
+                
+            </table>
+        </div>
+
+        <div id="quinta" class="eletivas " >
+            <h2 class=" text-orange-400">Eletivas de Quinta-feira</h2>
+            <table style ='border-collapse: collapse'>
+                    <tr>
+                      <th scope="col">#ID</th>
+                      <th scope="col">Nome da eletiva</th>
+                      <th scope="col">Professor</th>
+                      <th scope="col">Semestre</th>
+                      <th> </th>
+                    </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Matemática para olimpíadas</td> <td>Antoniel Oliveira</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Matemática para olimpíadas', this) ">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Informática Básica</td> <td> Hyandra Ramos</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Informática básica', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Fundamentos do futsal</td><td>Paulo Jeferson</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Fundamentos do futsal', this)">Inscrever-se</button> </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Eletiva 1</td> <td>Professor A</td> <td>2024.1</td>
+                    <td><button onclick="inscreverEletiva('Eletiva 1', this)">Inscrever-se</button> </td>
+                </tr>
+                
+                
+            </table>
         </div>
     </div>
 
@@ -121,10 +210,11 @@
         function inscreverEletiva(nomeEletiva, button) {
             
             // Desabilitar todos os botões de inscrição
-            document.querySelectorAll('.eletivas tr th button').forEach(function(btn) {
+            document.querySelectorAll('.eletivas tr td button').forEach(function(btn) {
                 btn.disabled = true;
                 btn.style.backgroundColor = '#95a5a6'; // Cor de desativado
                 btn.style.cursor = 'not-allowed';
+  
             });
             button.textContent = ("Inscrito");
     

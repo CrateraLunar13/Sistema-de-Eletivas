@@ -1,5 +1,12 @@
 
-
+:root {
+    --bg-laranja: #e67e22;
+    --bg-main:#f9f9f9;
+    --width-drawer: 25%;
+    --pad-sec-w: 20px;
+    --pad-sec-h: 80px;
+    --bg-laranja-link: rgb(255, 174, 23);
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -26,20 +33,23 @@ header {
     display: flex;
     height: 100vh;
 }
-header h1 {
-    margin: 0;
+header {
+    background-color: var(--bg-laranja);
+    display: flex;
+    height: 120px;
 }
 
 header p {
     margin: 5px 0;
 }
 
-button {
+button, .botoes {
     background-color: #27ae60;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 10px;
+    margin: 15px;
+    
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -49,6 +59,9 @@ button {
 button:hover {
     background-color: #2ecc71;
 }
+
+
+
 
 .eletivas {
     background-color: #fff;
@@ -79,12 +92,9 @@ table{
     font-weight: bold;
     text-align: center;
 
-    background-color: #dadada;
-
 }
-.eletivas tr{
-
-
+.eletivas tr th {
+    
 }
 
 
@@ -95,6 +105,7 @@ table{
     color: white;
     border: none;
     padding: 10px 12px;
+    margin: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;

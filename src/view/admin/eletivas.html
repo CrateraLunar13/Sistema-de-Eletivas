@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            border: solid 1px black;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        body,html{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        main{
+            flex:1;
+        }
+        
+        header,footer{
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <header class="sw">HEADER</header>
+    <main class="sw">MAIN</main>
+    <footer class="sw">FOOTER</footer>
+    <script>
+        console.log(document.getElementsByClassName('sw'))
+    </script>
+</body>
+</html>

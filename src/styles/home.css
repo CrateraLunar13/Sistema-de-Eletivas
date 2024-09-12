@@ -44,7 +44,20 @@ header {
     height: 100px;
     color: white;
     margin-inline: 20px;
-    margin-block: auto;
+    margin-block
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    : auto;
     padding-block: auto;
     border-radius:5px;
     
@@ -138,4 +151,11 @@ aside nav a{
 .acoes{
     display: flex;
     justify-content: space-evenly;
+}
+
+
+
+
+.status{
+    color: #27ae60;
 }
